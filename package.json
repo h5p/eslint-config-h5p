@@ -1,0 +1,31 @@
+{
+  "name": "h5p-eslint-config",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Reusable ESLint configuration for H5P projects",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist",
+    "prepare": "npm run build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "eslint": "^8.57.0",
+    "@babel/eslint-parser": "^7.24.7",
+    "@eslint/eslintrc": "^3.1.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-jsdoc": "^48.2.12",
+    "globals": "^15.6.0"
+  },
+  "keywords": ["linter", "eslint", "h5p"],
+  "author": "H5P Group",
+  "license": "ISC"
+}
