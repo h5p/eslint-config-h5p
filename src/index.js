@@ -1,11 +1,11 @@
-import { baseRules } from './rules/base.js';
-import { languageConfig } from './configs/language.js';
+import baseRules from './rules/base';
+import languageConfig from './configs/language';
 
 const config = {
   files: ['**/*.js', '**/*.jsx'],
   languageOptions: languageConfig,
   rules: baseRules,
-  extends: ['airbnb']
+  extends: ['airbnb'],
 };
 
 export default config;

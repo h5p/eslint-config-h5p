@@ -1,7 +1,7 @@
-export const baseRules = {
+const baseRules = {
   'valid-jsdoc': 'off',
-  'semi': ['error', 'always'],
-  'indent': ['error', 2, { SwitchCase: 1 }],
+  semi: ['error', 'always'],
+  indent: ['error', 2, { SwitchCase: 1 }],
   'brace-style': ['error', 'stroustrup'],
   'keyword-spacing': ['error', { after: true }],
   'comma-spacing': ['error', { before: false, after: true }],
@@ -18,3 +18,5 @@ export const baseRules = {
   'no-use-before-define': ['error', { variables: false }],
   'react/prop-types': 0,
 };
+
+export default baseRules;

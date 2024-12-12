@@ -1,6 +1,6 @@
 import globals from 'globals';
 
-export const languageConfig = {
+const languageConfig = {
   globals: {
     ...globals.browser,
     ...globals.jquery,
@@ -8,7 +8,7 @@ export const languageConfig = {
     H5PIntegration: 'readonly',
     H5PEditor: 'readonly',
     stripePK: 'readonly',
-    domReady: 'readonly'
+    domReady: 'readonly',
   },
   parser: '@babel/eslint-parser',
   parserOptions: {
@@ -17,5 +17,7 @@ export const languageConfig = {
     ecmaFeatures: {
       jsx: true,
     },
-  }
+  },
 };
+
+export default languageConfig;
