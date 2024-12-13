@@ -1,12 +1,15 @@
 {
-  "name": "h5p-eslint-config",
+  "name": "eslint-config-h5p",
   "version": "1.0.0",
   "description": "Reusable ESLint configuration for H5P projects",
   "type": "module",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
   "files": [
     "index.js",
-    "src/"
+    "src/**/*.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -37,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/h5p/h5p-eslint-config.git"
+    "url": "git+https://github.com/h5p/eslint-config-h5p.git"
   },
-  "homepage": "https://github.com/h5p/h5p-eslint-config#readme"
+  "homepage": "https://github.com/h5p/eslint-config-h5p#readme"
 }

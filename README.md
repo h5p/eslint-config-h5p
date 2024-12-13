@@ -8,8 +8,8 @@ This package provides a shared ESLint configuration for H5P projects, allowing f
 ## Installation
 Install the package via npm:
 
-```javascript
-npm install --save-dev h5p-eslint-config
+```bash
+npm install --save-dev eslint-config-h5p
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ Add an ESLint configuration file to the root of your project.
 Using ESM modules, create an eslint.config.js file:
 
 ```javascript
-import h5pConfig from "h5p-eslint-config";
+import h5pConfig from "eslint-config-h5p";
 
 export default [
   h5pConfig,
@@ -44,19 +44,81 @@ Add a lint script to your package.json:
 }
 ```
 
+Then, install dependencies and peer dependencies
+```bash
+npm install --save-dev eslint-config-h5p eslint eslint-config-airbnb-base eslint-plugin-import
+```
+
+Or use the shorthand:
+```bash
+npx install-peerdeps --dev eslint-config-h5p
+```
+
 Now you can run ESLint with:
-```javascript
+```bash
 npm run lint
 ```
 
 ## Ignoring Files and Directories
-To ignore specific files or directories from linting, create a .eslintignore file in the root of your project:
+To ignore specific files or directories from linting, add an array of ignores to your eslint.config file:
+
+```javascript
+ignores: [
+  'node_modules/**',
+  'dist/**',
+],
+```
+
+
+## Development Guide
+
+### Setting Up Local Development
+
+To test this ESLint configuration in your projects locally before publishing:
+
+#### 1. Link the ESLint Config Package
+
+```bash
+# Clone and setup eslint-config-h5p
+git clone https://github.com/h5p/eslint-config-h5p.git
+cd eslint-config-h5p
+
+# Install dependencies
+npm install
+
+# Create global symlink
+npm link
+
+# Navigate to your target project
+cd path/to/your-h5p-project
+
+# Install peer dependencies
+npm install --save-dev eslint eslint-config-airbnb-base eslint-plugin-import
+
+# Link to your local eslint-config-h5p
+npm link eslint-config-h5p
+
+Create eslint.config.js in your project root:
+
+import h5pConfig from 'eslint-config-h5p';
+
+export default {
+  ...h5pConfig,
+  // Add any project-specific overrides here
+};
+
+Add a lint script to package.json:
+
+{
+  "scripts": {
+    "lint": "eslint ."
+  }
+}
 
 ```
-/vendor
-/node_modules
-/public
-/webpack.mix.js
-```
-Customize the ignore list as needed for your project.
 
+Verify the setup:
+
+```bash
+npm run lint
+```
