@@ -13,38 +13,10 @@ npm install --save-dev h5p-eslint-config
 ```
 
 ## Usage
-Add an ESLint configuration file to the root of your project. You can choose between different formats.
-
-### Using .eslintrc.json
-Create a .eslintrc.json file with the following content:
-
-```javascript
-{
-  "extends": "h5p-eslint-config",
-  "rules": {
-    // You can override or extend the configuration here
-    // For example:
-    // "no-console": "off"
-  }
-}
-```
-
-### Using .eslintrc.js
-Alternatively, create an .eslintrc.js file:
-
-```javascript
-module.exports = {
-  extends: "h5p-eslint-config",
-  // You can override or extend the configuration here
-  // For example:
-  // rules: {
-  //   "no-console": "off",
-  // },
-};
-```
+Add an ESLint configuration file to the root of your project.
 
 ### Using eslint.config.js (ESM)
-If you prefer using ESM modules, create an eslint.config.js file:
+Using ESM modules, create an eslint.config.js file:
 
 ```javascript
 import h5pConfig from "h5p-eslint-config";

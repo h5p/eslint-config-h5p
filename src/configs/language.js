@@ -10,13 +10,13 @@ const languageConfig = {
     stripePK: 'readonly',
     domReady: 'readonly',
   },
-  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
+    requireConfigFile: false,
   },
 };
 
