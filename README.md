@@ -22,14 +22,17 @@ Using ESM modules, create an eslint.config.js file:
 import h5pConfig from "eslint-config-h5p";
 
 export default [
+  // {
+  //  ignores: ['Add ignores here']
+  // },
   h5pConfig,
   {
-    // You can override or extend the configuration here
+    // You can override or extend the rules here
     // For example:
-    // rules: {
-    //   "no-console": "off",
-    // },
-  },
+    rules: {
+      "no-console": "off",
+    },
+  }
 ];
 ```
 
