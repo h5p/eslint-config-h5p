@@ -23,6 +23,13 @@ export default [
     rules: {
       ...baseRules,
       'import/extensions': ['error', 'ignorePackages', { js: 'always', jsx: 'always' }],
+      'quotes': ['error', 'single'],
+      'handle-callback-err': ['error'],
+      'comma-dangle': ['error', 'always-multiline'],
+      'import/prefer-default-export': 'off',
+      'no-restricted-syntax': 'off',
+      'no-plusplus': 'off',
+      'no-continue': 'off',
     },
   },
 ];
