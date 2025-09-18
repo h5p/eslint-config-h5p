@@ -1,16 +1,24 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import baseRules from './src/rules/base.js';
-import languageConfig from './src/configs/language.js';
+import eslintConfig from './eslint.config.mjs';
 
-const compat = new FlatCompat({
-  baseDirectory: process.cwd(),
-});
+// Current dependants do not use flat config format, so merge configs for compatibility
+const mergeConfigs = (configs) => configs.reduce((acc, config) => ({
+  ignores: [
+    ...(acc.ignores || []),
+    ...(config.ignores || []),
+  ],
+  files: config.files || acc.files,
+  languageOptions: {
+    ...acc.languageOptions,
+    ...config.languageOptions,
+  },
+  plugins: {
+    ...acc.plugins,
+    ...config.plugins,
+  },
+  rules: {
+    ...acc.rules,
+    ...config.rules,
+  },
+}), {});
 
-const airbnbConfig = compat.extends('airbnb-base')[0];
-
-export default {
-  ...airbnbConfig,
-  files: ['**/*.js', '**/*.jsx', '**/*.mjs'],
-  languageOptions: languageConfig,
-  rules: baseRules,
-};
+export default mergeConfigs(eslintConfig);

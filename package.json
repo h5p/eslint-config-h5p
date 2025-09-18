@@ -25,17 +25,11 @@
   "license": "ISC",
   "peerDependencies": {
     "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.31.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.31.0"
+    "eslint-config-airbnb-base": "^15.0.0"
   },
   "dependencies": {
     "@eslint/eslintrc": "^3.2.0",
-    "eslint-plugin-jsdoc": "^48.2.12",
+    "eslint-plugin-import": "^2.31.0",
     "globals": "^15.6.0"
   },
   "repository": {
