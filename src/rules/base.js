@@ -1,4 +1,4 @@
-const rules = {
+export default {
   'valid-jsdoc': 'off',
   semi: ['error', 'always'],
   indent: ['error', 2, { SwitchCase: 1 }],
@@ -19,7 +19,9 @@ const rules = {
   'no-restricted-globals': ['error', 'event'],
   'no-underscore-dangle': 'off',
   'no-use-before-define': ['error', { variables: false }],
-  'react/prop-types': 'off',
+  'handle-callback-err': ['error'],
+  'comma-dangle': ['error', 'always-multiline'],
+  'no-restricted-syntax': 'off',
+  'no-plusplus': 'off',
+  'no-continue': 'off',
 };
-
-export default rules;

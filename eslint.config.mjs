@@ -1,5 +1,6 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import baseRules from './src/rules/base.js';
+import importRules from './src/rules/import.js';
 import languageConfig from './src/configs/language.js';
 
 const compat = new FlatCompat({
@@ -14,6 +15,9 @@ export default [
       'vendor/**',
       'public/**',
       'webpack.mix.js',
+      'eslint.config.{js,mjs,cjs}',
+      '.eslintrc.{js,cjs,json}',
+      '**/*.config.{js,mjs,cjs}',
     ],
   },
   ...compat.extends('airbnb-base'),
@@ -22,13 +26,7 @@ export default [
     languageOptions: languageConfig,
     rules: {
       ...baseRules,
-      'import/extensions': ['error', 'ignorePackages', { js: 'always', jsx: 'always' }],
-      'handle-callback-err': ['error'],
-      'comma-dangle': ['error', 'always-multiline'],
-      'import/prefer-default-export': 'off',
-      'no-restricted-syntax': 'off',
-      'no-plusplus': 'off',
-      'no-continue': 'off',
+      ...importRules,
     },
   },
 ];
