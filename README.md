@@ -98,7 +98,7 @@ Create eslint.config.js in your project root:
 import h5pConfig from 'eslint-config-h5p';
 
 export default {
-  h5pConfig,
+...h5pConfig,
   // Add any project-specific overrides here
 };
 ```
