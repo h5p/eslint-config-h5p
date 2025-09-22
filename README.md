@@ -9,14 +9,14 @@ This package provides a shared ESLint configuration for H5P projects, allowing f
 Install the package via npm:
 
 ```bash
-npm install --save-dev eslint-config-h5p
+npm install --save-dev eslint-config-h5p eslint@8 eslint-config-airbnb-base
 ```
 
 ## Usage
 Add an ESLint configuration file to the root of your project.
 
 ### Using eslint.config.js (ESM)
-Using ESM modules, create an eslint.config.js file:
+Using ESM, create an `eslint.config.js` file and ensure that your `package.json` file contains the `"type": "module"` property/value pair. If your own code is not an ESM and you cannot set the type to `module`, then use `eslint.config.mjs` for the name of the eslint configuration file instead.
 
 ```javascript
 import h5pConfig from "eslint-config-h5p";
@@ -45,16 +45,6 @@ Add a lint script to your package.json:
     "lint": "eslint ."
   }
 }
-```
-
-Then, install dependencies and peer dependencies
-```bash
-npm install --save-dev eslint-config-h5p eslint eslint-config-airbnb-base eslint-plugin-import
-```
-
-Or use the shorthand:
-```bash
-npx install-peerdeps --dev eslint-config-h5p
 ```
 
 Now you can run ESLint with:
@@ -96,28 +86,30 @@ npm link
 cd path/to/your-h5p-project
 
 # Install peer dependencies
-npm install --save-dev eslint eslint-config-airbnb-base eslint-plugin-import
+npm install --save-dev eslint@8 eslint-config-airbnb-base
 
 # Link to your local eslint-config-h5p
 npm link eslint-config-h5p
+```
 
 Create eslint.config.js in your project root:
 
+```javascript
 import h5pConfig from 'eslint-config-h5p';
 
 export default {
-  ...h5pConfig,
+...h5pConfig,
   // Add any project-specific overrides here
 };
+```
 
 Add a lint script to package.json:
-
+```
 {
   "scripts": {
     "lint": "eslint ."
   }
 }
-
 ```
 
 Verify the setup:
