@@ -16,7 +16,7 @@ npm install --save-dev eslint-config-h5p eslint@8 eslint-config-airbnb-base
 Add an ESLint configuration file to the root of your project.
 
 ### Using eslint.config.js (ESM)
-Using ESM modules, create an eslint.config.js file:
+Using ESM, create an `eslint.config.js` file and ensure that your `package.json` file contains the `"type": "module"` property/value pair. If your own code is not an ESM and you cannot set the type to `module`, then use `eslint.config.mjs` for the name of the eslint configuration file instead.
 
 ```javascript
 import h5pConfig from "eslint-config-h5p";
