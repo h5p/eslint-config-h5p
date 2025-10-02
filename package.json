@@ -9,6 +9,7 @@
   },
   "files": [
     "index.js",
+    "eslint.config.mjs",
     "src/**/*.js"
   ],
   "scripts": {
