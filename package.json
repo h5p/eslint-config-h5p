@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-h5p",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Reusable ESLint configuration for H5P projects",
   "type": "module",
   "main": "index.js",
